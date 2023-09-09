@@ -46,12 +46,13 @@ async def save_video(msg: types.Message):
                 await msg.answer_video(video=link, reply_markup=video_keyboards(link))
             except:
                 await msg.reply(f"{msg.from_user.full_name} yuklash uchun 📥 bosing", reply_markup=video_keyboards(link))
-        await msg.delete()
+        await message.delete()
     except:
         await message.delete()
         m = await msg.reply("siz xato link yubordinggiz")
         await asyncio.sleep(5)
         await m.delete()
+        await msg.delete()
 
 
 
